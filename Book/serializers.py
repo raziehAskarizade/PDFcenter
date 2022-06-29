@@ -9,10 +9,10 @@ class InfoBookSerializers(serializers.ModelSerializer):
         fields = (
             'name', 'author', 'translator', 'photo', 'details', 'publish_date', 'page_num', 'rate', 'rate_number',
             'views',
-            'pdf',)
+            'pdf', 'id', 'slug')
 
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
-        fields = ('name',)
+        fields = ('name', 'slug',)
