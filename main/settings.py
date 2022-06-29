@@ -128,10 +128,3 @@ JALALI_DATE_DEFAULTS = {
         }
     },
 }
-
-if os.environ.get('DEBUG') == 'TRUE':
-    DEBUG = True
-elif os.environ.get('DEBUG') == 'FALSE':
-    DEBUG = False
-elif os.environ.get('DEBUS') == None:
-    DEBUG = False
