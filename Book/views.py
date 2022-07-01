@@ -22,7 +22,7 @@ def book_list(self, tag_slug=None):
     serialize_tags = TagSerializer(tags_list, many=True)
 
     context = {'books': serialize_obj.data, 'tags_list': serialize_tags.data, 'tag': tag}
-    return Response(mark_safe(context), status=status.HTTP_200_OK)
+    return Response(context, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])
@@ -37,4 +37,4 @@ def book_detail(request, objectId, slug):
 
     context = {'book': serialize_book.data, 'related_book': serialize_related_book.data}
 
-    return Response(mark_safe(context), status=status.HTTP_200_OK)
+    return Response(context, status=status.HTTP_200_OK)
