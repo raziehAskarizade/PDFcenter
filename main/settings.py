@@ -18,7 +18,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'Book',
-    'taggit_serializer',
     'taggit',
     'jalali_date',
     'django_jalali',
