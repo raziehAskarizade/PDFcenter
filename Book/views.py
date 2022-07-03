@@ -18,10 +18,11 @@ def book_list(self, tag_slug=None):
     if tag_slug:
         tag = get_object_or_404(Tag, slug=tag_slug)
         object_list = object_list.filter(tags__in=[tag])
+    serialize_tag = TagSerializer(tag, many=False)
     serialize_obj = InfoBookSerializers(object_list, many=True)
     serialize_tags = TagSerializer(tags_list, many=True)
 
-    context = {'books': serialize_obj.data, 'tags_list': serialize_tags.data, 'tag': tag}
+    context = {'books': serialize_obj.data, 'tags_list': serialize_tags.data, 'tag': serialize_tag.data}
     return Response(context, status=status.HTTP_200_OK)
 
 
